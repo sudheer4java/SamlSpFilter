@@ -18,9 +18,9 @@ import us.nc.state.enr.ibeam.filter.store.SAMLSessionManager;
 import us.nc.state.enr.ibeam.filter.util.OpenSamlBootstrap;
 import us.nc.state.enr.ibeam.filter.util.SAMLUtils;
 
-public class IbeamCasFilter implements Filter {
+public class IbeamSamlFilter implements Filter {
 	public static final String SAML_AUTHN_RESPONSE_PARAMETER_NAME = "SAMLResponse";
-	private static final Logger log = LoggerFactory.getLogger(IbeamCasFilter.class);
+	private static final Logger log = LoggerFactory.getLogger(IbeamSamlFilter.class);
 	private FilterConfig filterConfig;
 	private SAMLResponseVerifier checkSAMLResponse;
 	private SAMLRequestSender samlRequestSender;

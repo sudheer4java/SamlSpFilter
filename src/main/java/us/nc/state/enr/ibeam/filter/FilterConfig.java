@@ -18,10 +18,10 @@ public class FilterConfig {
 
 	public FilterConfig(javax.servlet.FilterConfig config) {
 		excludedUrlPattern = config.getInitParameter(EXCLUDED_URL_PATTERN_PARAMETER);
-		acsUrl = config.getInitParameter(SP_ACS_URL_PARAMETER);
-		spProviderId = config.getInitParameter(SP_ID_PARAMETER);
-		idpSSOUrl = config.getInitParameter(IDP_SSO_URL_PARAMETER);
-		logoutUrl = config.getInitParameter(SP_LOGOUT_URL_PARAMETER);
+		acsUrl = config.getInitParameter(SP_ACS_URL_PARAMETER) == null ? "https://localhost/8085/landing" :config.getInitParameter(SP_ACS_URL_PARAMETER);
+		spProviderId = config.getInitParameter(SP_ID_PARAMETER) == null ? "com:vdenotaris:spring:sp" :config.getInitParameter(SP_ID_PARAMETER);;
+		idpSSOUrl = config.getInitParameter(IDP_SSO_URL_PARAMETER) == null ? "https://idp.ssocircle.com/sso/UI/Login" : config.getInitParameter(IDP_SSO_URL_PARAMETER);
+		logoutUrl = config.getInitParameter(SP_LOGOUT_URL_PARAMETER) == null ? "https://localhost:8085/saml/logout": config.getInitParameter(SP_LOGOUT_URL_PARAMETER);
 	}
 
 	// getters and should be defined below
